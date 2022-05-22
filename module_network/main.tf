@@ -17,7 +17,7 @@ resource "azurerm_virtual_network" "net" {
   resource_group_name = "${azurerm_resource_group.webhelp.name}"
   address_space       = "${var.subnet_pref}"
 
-  #dns_servers         = ["10.0.0.4", "10.0.0.5"]
+  #dns_servers         = ["10.0.0.4", "10.0.0.5s"]
 }
 resource "azurerm_subnet" "webehlp_site1" {
   name = "${var.subnet_name[count.index]}"
