@@ -26,3 +26,7 @@ resource "azurerm_subnet" "webehlp_site1" {
   address_prefixes = [(var.subnet_pref[count.index])]
   count = "${length(var.subnet_name)}" 
 }
+resource "azurerm_virtual_network_dns_servers" "DNS" {
+  virtual_network_id = azurerm_virtual_network.net.id
+  dns_servers        = ["8.8.4.4", "8.8.8.8"]
+}
